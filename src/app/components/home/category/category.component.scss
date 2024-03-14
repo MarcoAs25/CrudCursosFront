@@ -1,0 +1,18 @@
+.sub-container{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.title-sub-header{
+  font-size: 1rem;
+}
+
+.mat-column-actions{
+  text-align: center;
+  width: 50%;
+}
+
+.mat-column-name{
+  text-align: left;
+  width: 50%;
+}

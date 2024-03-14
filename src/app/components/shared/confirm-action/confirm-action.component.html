@@ -1,0 +1,12 @@
+<div>
+  <h1 matDialogTitle>⚠️ Confirm Action</h1>
+
+  <mat-dialog-content>
+    <strong>{{actionText}}</strong>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+      <button mat-flat-button (click)="confirm(false)">{{op1}}</button>
+      <button mat-flat-button [color]="color" (click)="confirm(true)">{{op2}}</button>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,25 @@
+<div class="w-100">
+  <h1 matDialogTitle>{{(newCourse?'Create':'Edit')+ ' Course'}}</h1>
+
+  <mat-dialog-content>
+    <form [formGroup]="courseFormGroup">
+      <mat-form-field class="w-100 pt-5" appearance="outline">
+        <mat-label>Name</mat-label>
+        <input type="name" matInput formControlName="name" placeholder="Ex. AI">
+        <mat-error *ngIf="courseFormGroup.get('name')?.hasError('required')">Please enter a name</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-100 pt-5" appearance="outline">
+        <mat-label>Select one category</mat-label>
+        <mat-select formControlName="categoryId">
+          <mat-option *ngFor="let category of categoryList"  [value]="category.id">{{category.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+      <button mat-flat-button (click)="close(false)" [disabled]="loadingBtn">Cancel</button>
+      <button mat-flat-button color="primary" [disabled]="loadingBtn" (click)="save()">{{newCourse? 'Save' : 'Edit'}}</button>
+  </mat-dialog-actions>
+</div>
